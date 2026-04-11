@@ -1,6 +1,16 @@
 import 'package:flutter/material.dart';
 
 class MachupicchuPage extends StatelessWidget {
+  Column buildButton(String text, IconData iconData) {
+    Color primaryColor = Colors.blue;
+    return Column(
+      children: [
+        Icon(iconData, color: primaryColor),
+        Text(text, style: TextStyle(color: primaryColor)),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,24 +57,9 @@ class MachupicchuPage extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Column(
-                        children: [
-                          Icon(Icons.call, color: Colors.blue),
-                          Text("CALL"),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          Icon(Icons.near_me, color: Colors.blue),
-                          Text("ROUTE"),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          Icon(Icons.share, color: Colors.blue),
-                          Text("SHARE"),
-                        ],
-                      ),
+                      buildButton("CALL", Icons.call),
+                      buildButton("ROUTE", Icons.near_me),
+                      buildButton("SHARE", Icons.share),
                     ],
                   ),
                 ),
